@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Hussain Anajwala AI/ML portfolio preview">
+  <rect width="1200" height="630" fill="#0d1117"/>
+  <rect x="48" y="48" width="1104" height="534" rx="28" fill="#111827" stroke="#4c1d95" stroke-width="2"/>
+  <circle cx="296" cy="318" r="180" fill="none" stroke="#8b5cf6" stroke-width="18" stroke-dasharray="10 12"/>
+  <circle cx="296" cy="318" r="110" fill="none" stroke="#22d3ee" stroke-width="16"/>
+  <path d="M680 236h132c90 0 164 74 164 164s-74 164-164 164H680" fill="none" stroke="#8b5cf6" stroke-width="24" stroke-linecap="round"/>
+  <path d="M812 236v328" stroke="#22d3ee" stroke-width="24" stroke-linecap="round"/>
+  <path d="M680 236l112 164-112 164" fill="none" stroke="#22d3ee" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="120" y="520" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="700">Hussain Anajwala</text>
+  <text x="120" y="575" fill="#8b5cf6" font-family="Inter, Arial, sans-serif" font-size="34">AI/ML Engineer • Computer Vision • GenAI</text>
+</svg>

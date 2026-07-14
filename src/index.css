@@ -1,0 +1,148 @@
+/* Fonts loaded via <link> in index.html to avoid render-blocking @import */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :root {
+    --background: 230 24% 6%;
+    --foreground: 220 18% 94%;
+
+    --card: 230 20% 10%;
+    --card-foreground: 220 18% 94%;
+
+    --popover: 230 20% 10%;
+    --popover-foreground: 220 18% 94%;
+
+    --primary: 262 90% 68%;
+    --primary-foreground: 230 24% 6%;
+
+    --secondary: 230 18% 15%;
+    --secondary-foreground: 220 18% 94%;
+
+    --muted: 230 16% 18%;
+    --muted-foreground: 225 12% 68%;
+
+    --accent: 188 95% 56%;
+    --accent-foreground: 230 24% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 16% 22%;
+    --input: 230 16% 22%;
+    --ring: 262 90% 68%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --glow-primary: 0 0 20px hsl(262 90% 68% / 0.3);
+    --glow-accent: 0 0 20px hsl(188 95% 56% / 0.3);
+    --gradient-hero: linear-gradient(135deg, hsl(262 90% 68% / 0.12) 0%, hsl(188 95% 56% / 0.06) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(230 20% 12%) 0%, hsl(230 20% 8%) 100%);
+    --terminal-green: 188 95% 56%;
+    --terminal-cyan: 262 90% 68%;
+    --terminal-yellow: 45 90% 60%;
+
+    --sidebar-background: 230 20% 10%;
+    --sidebar-foreground: 220 18% 94%;
+    --sidebar-primary: 262 90% 68%;
+    --sidebar-primary-foreground: 230 24% 6%;
+    --sidebar-accent: 230 18% 15%;
+    --sidebar-accent-foreground: 220 18% 94%;
+    --sidebar-border: 230 16% 22%;
+    --sidebar-ring: 262 90% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  code, pre, .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .terminal-border {
+    @apply border border-primary/30 rounded-lg;
+  }
+
+  .typing-cursor::after {
+    content: '|';
+    @apply text-primary animate-pulse ml-1;
+  }
+
+  /* Performance: use CSS animation instead of JS for cursor blink */
+  .animate-blink {
+    animation: blink 1s ease-in-out infinite;
+  }
+
+  /* GPU acceleration hints for animated elements */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary/30 text-foreground;
+}

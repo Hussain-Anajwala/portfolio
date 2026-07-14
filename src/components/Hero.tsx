@@ -1,0 +1,139 @@
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { BrainCircuit, ChevronRight, Download, MapPin } from 'lucide-react';
+import { HeroStatusBar } from '@/components/HeroStatusBar';
+
+const roles = [
+  'Computer Engineering Student',
+  'AI/ML Engineer in the making',
+  'Computer Vision, GenAI & Full-Stack AI Systems',
+];
+
+export const TypingAnimation = () => {
+  const [currentRole, setCurrentRole] = useState(0);
+  const [displayedText, setDisplayedText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const role = roles[currentRole];
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          if (displayedText.length < role.length) {
+            setDisplayedText(role.slice(0, displayedText.length + 1));
+          } else {
+            setTimeout(() => setIsDeleting(true), 2000);
+          }
+        } else if (displayedText.length > 0) {
+          setDisplayedText(displayedText.slice(0, -1));
+        } else {
+          setIsDeleting(false);
+          setCurrentRole((prev) => (prev + 1) % roles.length);
+        }
+      },
+      isDeleting ? 40 : 80
+    );
+
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, currentRole]);
+
+  return (
+    <span className="inline-flex items-center min-h-[2rem]">
+      <span className="text-gradient">{displayedText}</span>
+      <span className="w-0.5 h-8 bg-primary ml-1 animate-blink" />
+    </span>
+  );
+};
+
+export const Hero = () => {
+  return (
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div className="absolute inset-0 hero-gradient opacity-50" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(262_90%_68%_/_0.06)_0%,_transparent_70%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(hsl(230_18%_22%_/_0.28)_1px,transparent_1px),linear-gradient(90deg,hsl(230_18%_22%_/_0.28)_1px,transparent_1px)] bg-[size:50px_50px]" />
+
+      <div className="container relative z-10 px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          className="text-center max-w-4xl mx-auto"
+        >
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, ease: 'easeOut', delay: 0.05 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-card/50 backdrop-blur-sm mb-8"
+          >
+            <BrainCircuit className="w-4 h-4 text-primary" aria-hidden="true" />
+            <code className="text-sm text-muted-foreground">AI/ML Portfolio</code>
+            <ChevronRight className="w-4 h-4 text-primary" aria-hidden="true" />
+            <span className="text-accent text-sm">ready</span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.15 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 font-mono"
+          >
+            <span className="text-foreground">Hi, I'm </span>
+            <span className="text-gradient">Hussain Anajwala</span>
+            <span className="block mt-2 text-2xl md:text-3xl lg:text-4xl text-muted-foreground">
+              AI/ML Engineer in the making
+            </span>
+          </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.25 }}
+            className="text-2xl md:text-3xl lg:text-4xl font-mono mb-8 min-h-[3rem] flex items-center justify-center"
+          >
+            <TypingAnimation />
+          </motion.div>
+
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
+            Final-year Computer Engineering student (AI & ML specialization, Generative AI honours) at Vidyalankar
+            Institute of Technology, Mumbai. Building end-to-end AI applications from Computer Vision pipelines to RAG
+            systems to production full-stack apps.
+          </p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <motion.a href="#projects" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <button className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-md font-mono text-sm bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-90 hover:shadow-[0_0_30px_hsl(262_90%_68%_/_0.5)] transition-all duration-500">
+                View Projects
+                <ChevronRight className="w-4 h-4" aria-hidden="true" />
+              </button>
+            </motion.a>
+            <motion.a href={`${import.meta.env.BASE_URL}resume.pdf`} download="Hussain_Anajwala_Resume.pdf" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <button className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-md font-mono text-sm border border-accent/50 bg-transparent text-accent hover:bg-accent/10 hover:border-accent hover:shadow-[0_0_15px_hsl(188_95%_56%_/_0.3)] transition-all duration-500">
+                <Download className="w-4 h-4" aria-hidden="true" />
+                Download Resume
+              </button>
+            </motion.a>
+            <motion.a href="#contact" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <button className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-md font-mono text-sm border border-primary/50 bg-transparent text-primary hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_15px_hsl(262_90%_68%_/_0.3)] transition-all duration-500">
+                Contact Me
+              </button>
+            </motion.a>
+          </motion.div>
+
+          <div className="mt-6 inline-flex items-center gap-2 text-sm text-muted-foreground font-mono">
+            <MapPin className="w-4 h-4 text-primary" aria-hidden="true" />
+            Mumbai, Maharashtra
+          </div>
+          <HeroStatusBar />
+        </motion.div>
+
+        <div className="absolute top-1/4 left-10 w-20 h-20 border border-primary/20 rounded-lg rotate-12 hidden lg:block animate-float" />
+        <div className="absolute bottom-1/4 right-10 w-16 h-16 border border-accent/20 rounded-full hidden lg:block animate-float" style={{ animationDelay: '1s' }} />
+      </div>
+    </section>
+  );
+};

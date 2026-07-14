@@ -1,0 +1,22 @@
+# Hussain Anajwala - AI/ML Portfolio
+
+> Portfolio of Hussain Anajwala, a final-year Computer Engineering student specializing in AI & ML with an Honours track in Generative AI. Open to AI/ML and SDE internships.
+
+## Sections
+
+- [Hero](/#home): AI/ML role positioning, resume download, location, and contact entry points.
+- [About](/#about): Student background, AI/ML focus, current internship, and internship search.
+- [Skills](/#skills): Languages, AI/ML stack, web tools, databases, tooling, and core CS.
+- [Projects](/#projects): CropScan, Savour, and E-Commerce Intelligence Suite.
+- [Experience](/#experience): Cloud Counselage Pvt. Ltd. internship.
+- [Education & Achievements](/#education): Vidyalankar Institute of Technology, AI & ML specialization, Generative AI honours, CGPA, and achievements.
+- [Certifications](/#certifications): AI, ML, data, and software certifications.
+- [Contact](/#contact): Email, phone, GitHub, LinkedIn, and LeetCode.
+
+## Contact
+
+- Email: husainanajwala786@gmail.com
+- Phone: +91 8149664653
+- GitHub: https://github.com/Hussain-Anajwala
+- LinkedIn: https://www.linkedin.com/in/hussain-anajwala-99435434a/
+- LeetCode: https://leetcode.com/u/Hussain_Anajwala/
