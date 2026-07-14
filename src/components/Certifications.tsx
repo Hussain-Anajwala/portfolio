@@ -10,10 +10,10 @@ type Certification = {
 
 const certifications: Certification[] = [
   { title: 'GenAI Powered Data Analytics Job Simulation', issuer: 'Tata, Forage', date: 'Jul 2026', url: 'https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_6a460f19515132a0f9c760f7_1783079144414_completion_certificate.pdf' },
-  { title: 'Machine Learning Training Program', issuer: 'Larsen & Toubro Residential Program', date: 'Jun 2025', url: '/certificates/lt-ml-program.pdf' },
+  { title: 'Machine Learning Training Program', issuer: 'Larsen & Toubro Residential Program', date: 'Jun 2025', url: '/certificates/l&t-ml-program.jpg' },
   { title: 'Software Testing with Generative AI', issuer: 'Simplilearn', date: 'Sep 2025', url: 'https://simpli-web.app.link/e/Ro4fSjWTLWb' },
   { title: 'Artificial Intelligence for Business', issuer: 'Simplilearn', date: 'Sep 2025', url: 'https://simpli-web.app.link/e/TC7g6ilyLWb' },
-  { title: 'Big Data', issuer: 'Infosys Springboard', date: 'Aug 2025', url: '/certificates/big-data-infosys.pdf' },
+  { title: 'Big Data', issuer: 'Infosys Springboard', date: 'Aug 2025', url: '/certificates/big-data-infosys.jpg' },
 ];
 
 const containerVariants = {
