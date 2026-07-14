@@ -1,12 +1,19 @@
 import { motion } from 'framer-motion';
-import { Award } from 'lucide-react';
+import { Award, ExternalLink } from 'lucide-react';
 
-const certifications = [
-  { title: 'GenAI Powered Data Analytics Job Simulation', issuer: 'Tata, Forage', date: 'Jul 2026' },
-  { title: 'Machine Learning Training Program', issuer: 'Larsen & Toubro Residential Program', date: 'Jun 2025' },
-  { title: 'Software Testing with Generative AI', issuer: 'Simplilearn', date: 'Sep 2025' },
-  { title: 'Artificial Intelligence for Business', issuer: 'Simplilearn', date: 'Sep 2025' },
-  { title: 'Big Data', issuer: 'Infosys Springboard', date: 'Aug 2025' },
+type Certification = {
+  title: string;
+  issuer: string;
+  date: string;
+  url: string;
+};
+
+const certifications: Certification[] = [
+  { title: 'GenAI Powered Data Analytics Job Simulation', issuer: 'Tata, Forage', date: 'Jul 2026', url: 'https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_6a460f19515132a0f9c760f7_1783079144414_completion_certificate.pdf' },
+  { title: 'Machine Learning Training Program', issuer: 'Larsen & Toubro Residential Program', date: 'Jun 2025', url: '/certificates/lt-ml-program.pdf' },
+  { title: 'Software Testing with Generative AI', issuer: 'Simplilearn', date: 'Sep 2025', url: 'https://simpli-web.app.link/e/Ro4fSjWTLWb' },
+  { title: 'Artificial Intelligence for Business', issuer: 'Simplilearn', date: 'Sep 2025', url: 'https://simpli-web.app.link/e/TC7g6ilyLWb' },
+  { title: 'Big Data', issuer: 'Infosys Springboard', date: 'Aug 2025', url: '/certificates/big-data-infosys.pdf' },
 ];
 
 const containerVariants = {
@@ -59,16 +66,19 @@ export const Certifications = () => {
 
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {certifications.map((cert) => (
-            <motion.div key={cert.title} variants={itemVariants} whileHover={{ y: -6, transition: { duration: 0.3, ease: 'easeOut' } }} className="group h-full rounded-xl border border-border bg-card/50 backdrop-blur-sm p-6 hover:border-primary/50 hover:shadow-[0_0_30px_hsl(262_90%_68%_/_0.1)] transition-all duration-500">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors duration-500">
-                <Award className="w-6 h-6 text-primary" aria-hidden="true" />
+            <motion.a key={cert.title} href={cert.url} target="_blank" rel="noopener noreferrer" variants={itemVariants} whileHover={{ y: -6, transition: { duration: 0.3, ease: 'easeOut' } }} className="group h-full rounded-xl border border-border bg-card/50 backdrop-blur-sm p-6 hover:border-primary/50 hover:shadow-[0_0_30px_hsl(262_90%_68%_/_0.1)] transition-all duration-500 cursor-pointer">
+              <div className="flex items-start justify-between mb-4">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-500">
+                  <Award className="w-6 h-6 text-primary" aria-hidden="true" />
+                </div>
+                <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-bold font-mono mb-2 text-foreground group-hover:text-gradient transition-all duration-500">{cert.title}</h3>
               <p className="text-sm text-muted-foreground mb-3">Issued by {cert.issuer}</p>
               <span className="inline-flex px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs text-primary font-mono">
                 {cert.date}
               </span>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
       </div>

@@ -47,7 +47,7 @@ export const TypingAnimation = () => {
 
 export const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24">
       <div className="absolute inset-0 hero-gradient opacity-50" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(262_90%_68%_/_0.06)_0%,_transparent_70%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(hsl(230_18%_22%_/_0.28)_1px,transparent_1px),linear-gradient(90deg,hsl(230_18%_22%_/_0.28)_1px,transparent_1px)] bg-[size:50px_50px]" />
