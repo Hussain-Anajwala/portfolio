@@ -37,7 +37,7 @@ const projects: Project[] = [
     tech: ['YOLOv8n', 'CLIP', 'Whisper', 'spaCy', 'ChromaDB', 'MongoDB Atlas', 'JWT/RBAC'],
     icon: FlaskConical,
     github: 'https://github.com/Hussain-Anajwala',
-    demo: 'https://savour.hussainanajwala.dpdns.org',
+    demo: 'https://savour.hussainanajwala.dev/',
   },
   {
     title: 'E-Commerce Intelligence Suite - Predictive Analytics Platform',

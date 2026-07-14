@@ -19,10 +19,10 @@ const Index = () => {
         <meta name="description" content="Final-year Computer Engineering student specializing in AI & ML. Building Computer Vision, Generative AI, and full-stack AI applications. Open to AI/ML & SDE internships." />
         <meta name="keywords" content="AI/ML intern, Computer Vision, Generative AI, RAG, PyTorch, FastAPI, React, LangChain, Mumbai, Computer Engineering student" />
         <meta name="theme-color" content="#0d1117" />
-        <link rel="canonical" href="https://hussainanajwala.dpdns.org/" />
+        <link rel="canonical" href="https://www.hussainanajwala.dev/" />
         <meta property="og:title" content="Hussain Anajwala | AI/ML Engineer & Computer Engineering Student" />
         <meta property="og:description" content="Final-year Computer Engineering student specializing in AI & ML. Building Computer Vision, Generative AI, and full-stack AI applications." />
-        <meta property="og:url" content="https://hussainanajwala.dpdns.org/" />
+        <meta property="og:url" content="https://www.hussainanajwala.dev/" />
         <meta name="twitter:title" content="Hussain Anajwala | AI/ML Engineer & Computer Engineering Student" />
         <meta name="twitter:description" content="Final-year Computer Engineering student specializing in AI & ML. Building Computer Vision, Generative AI, and full-stack AI applications." />
       </Helmet>
