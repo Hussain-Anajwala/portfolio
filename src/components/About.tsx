@@ -99,7 +99,7 @@ export const About = () => {
                   <GraduationCap className="w-5 h-5 text-primary mt-0.5" aria-hidden="true" />
                   <div>
                     <span className="text-muted-foreground">status:</span>
-                    <span className="text-foreground ml-2">Final-year student, seeking internships</span>
+                    <span className="text-foreground ml-2">Final-year student</span>
                   </div>
                 </motion.div>
               </motion.div>
